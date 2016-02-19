@@ -1,0 +1,18 @@
+{
+  "name": "fontselect-jquery-plugin",
+  "homepage": "https://github.com/tommoor/fontselect-jquery-plugin",
+  "_release": "09c7f78e23",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "09c7f78e232ad4a8a9405773f806de1891a1feea"
+  },
+  "main": [
+    "fontselect.css",
+    "jquery.fontselect.js"
+  ],
+  "_source": "https://github.com/tommoor/fontselect-jquery-plugin.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/tommoor/fontselect-jquery-plugin.git",
+  "_direct": true
+}
