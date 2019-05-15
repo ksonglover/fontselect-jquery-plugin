@@ -13,6 +13,12 @@
      var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
      var fonts = [
+      "Noto Sans TC",
+      "Noto Serif TC",
+      "Aclonica",
+      "Allan",
+      "Annie+Use+Your+Telescope",
+      "Anonymous+Pro",
       "Aclonica",
       "Allan",
       "Annie+Use+Your+Telescope",
