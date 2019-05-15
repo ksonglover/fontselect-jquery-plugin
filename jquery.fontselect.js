@@ -13,6 +13,7 @@
      var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
      var fonts = [
+      "cwTeXKai", "cwTeXYen", "cwTeXFangSong", "cwTeXMing",
       "Noto Sans TC",
       "Noto Serif TC",
       "Aclonica",
@@ -241,7 +242,9 @@
       style: 'font-select',
       placeholder: 'Select a font',
       lookahead: 2,
-      api: 'http://fonts.googleapis.com/css?family='
+      api: 'http://fonts.googleapis.com/css?family=',
+      earlyaccess : ["cwTeXKai", "cwTeXYen", "cwTeXFangSong", "cwTeXMing"],
+	  earlyaccess_api : "https://fonts.googleapis.com/earlyaccess/"
     };
     
     var Fontselect = (function(){
@@ -388,12 +391,19 @@
       };
       
       Fontselect.prototype.addFontLink = function(font){
-      
-        var link = this.options.api + font;
-      
-        if ($("link[href*='" + font + "']").length === 0){
-			$('link:last').after('<link href="' + link + '" rel="stylesheet" type="text/css">');
-		}
+       	if(this.options.earlyaccess.indexOf(font)>=0){
+			font = font.toLowerCase();
+			var earlylink = this.options.earlyaccess_api + font + ".css";
+			if ($("link[href*='" + font + "']").length === 0){
+	       		$('link:last').after('<link href="' + earlylink + '" rel="stylesheet" type="text/css">');
+	        }
+		}else{
+	        var link = this.options.api + font;
+	        if ($("link[href*='" + font + "']").length === 0){
+        		$('link:last').after('<link href="' + link + '" rel="stylesheet" type="text/css">');	
+        	}
+	    }
+
       };
     
       return Fontselect;
@@ -408,3 +418,4 @@
 
   };
 })(jQuery);
+
